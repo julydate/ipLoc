@@ -32,7 +32,7 @@ if(@$_GET['token'] === $token) {
 				$reply = urlencode("IP:".$ip."\n".$reply);
 			}
 		} else {
-			$reply = "此群组或用户未授权使用，请联系 t.me/ 获取授权";
+			$reply = urlencode("此群组或用户未授权使用，请联系 t.me/ 获取授权");
 		}
 		$callback = @file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chat_id."&text=".$reply);
 	}
